@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.discoverpermissions"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.discoverpermissions"
@@ -66,4 +66,7 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // accompanist
+    implementation("com.google.accompanist:accompanist-drawablepainter:0.35.0-alpha")
 }
