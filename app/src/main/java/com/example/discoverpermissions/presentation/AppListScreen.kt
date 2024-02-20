@@ -1,5 +1,8 @@
 package com.example.discoverpermissions.presentation
 
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageManager
+import android.util.Log
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -17,7 +20,8 @@ import androidx.compose.ui.unit.dp
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppListScreen(
-
+    packageManager: PackageManager,
+    appList: List<ApplicationInfo>,
     modifier: Modifier = Modifier
 ) {
 //    TopAppBar(
@@ -30,8 +34,10 @@ fun AppListScreen(
 //        title = { Text(text = "Applications") }
 //    )
     LazyColumn( content = {
-        items(1) {
+        items(appList.size) {
             AppPreviewCard(
+                appIcon = packageManager.getApplicationIcon(appList[it].packageName),
+                appTitle = packageManager.getApplicationLabel(appList[it]).toString(),
                 modifier = Modifier
                     .height(128.dp)
                     .padding(16.dp)

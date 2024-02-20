@@ -1,11 +1,13 @@
 package com.example.discoverpermissions.presentation
 
+import android.graphics.drawable.Drawable
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -25,9 +27,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.discoverpermissions.R
+import com.google.accompanist.drawablepainter.rememberDrawablePainter
 
 @Composable
 fun AppPreviewCard(
+    appIcon: Drawable,
+    appTitle: String,
+//    appIcon:
     modifier: Modifier = Modifier,
 ) {
     Card(
@@ -39,25 +45,31 @@ fun AppPreviewCard(
     ) {
         Row(
             modifier = Modifier
-                .fillMaxWidth()
+                .fillMaxSize()
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Card(
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.tertiaryContainer
-                ),
-                elevation = CardDefaults.cardElevation(4.dp),
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.ic_launcher_foreground),
-                    contentDescription = "App Icon",
-                )
-            }
+//            Card(
+//                colors = CardDefaults.cardColors(
+//                    containerColor = MaterialTheme.colorScheme.tertiaryContainer
+//                ),
+//                elevation = CardDefaults.cardElevation(4.dp),
+//            ) {
+//                Image(
+//                    painter = rememberDrawablePainter(appIcon),
+//                    contentDescription = "App Icon",
+//                )
+//            }
+            Image(
+                painter = rememberDrawablePainter(drawable = appIcon),
+                contentDescription = "App Icon",
+                modifier = Modifier
+                    .size(64.dp)
+            )
 
             Text(
-                text = "Placeholder App Title",
+                text = appTitle,
                 fontSize = 18.sp,
             )
             Spacer(modifier = Modifier.width(8.dp))
