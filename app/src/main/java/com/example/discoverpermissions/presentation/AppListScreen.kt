@@ -50,7 +50,7 @@ fun PermissionsApp(
         composable(route = "app/{packageName}",
             arguments = listOf(navArgument("packageName") { type = NavType.StringType })
         ) { navBackStackEntry ->
-            AppScreen(navController, navBackStackEntry.arguments?.getString("packageName") ?: "Missing package?")
+            AppScreen(navController, packageManager, navBackStackEntry.arguments?.getString("packageName"))
         }
     }
 }

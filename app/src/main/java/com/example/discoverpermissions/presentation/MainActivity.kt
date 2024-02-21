@@ -47,7 +47,9 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-
+        visibleAppList.sortBy {
+            packageManager.getApplicationLabel(it).toString()
+        }
         setContent {
             DiscoverPermissionsTheme {
                 // A surface container using the 'background' color from the theme
