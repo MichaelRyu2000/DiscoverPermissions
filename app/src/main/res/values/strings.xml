@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DiscoverPermissions</string>
+    <string name="specific_app">SpecificApp</string>
 </resources>
