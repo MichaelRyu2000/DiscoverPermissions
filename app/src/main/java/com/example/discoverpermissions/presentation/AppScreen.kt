@@ -55,7 +55,6 @@ fun AppScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(10.dp),
-            verticalArrangement = Arrangement.SpaceBetween,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             if (packageName == null) {
