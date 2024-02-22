@@ -6,5 +6,5 @@ Created an app that lists all user and third-party installed apps on the Android
 
 ## Further Goals
 
-Allow user to click on a button to direct them to the app permissions screen in the Android settings app.
+FINISHED - Allow user to click on a button to direct them to the app permissions screen in the Android settings app.
 
