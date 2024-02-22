@@ -56,17 +56,6 @@ fun AppPreviewCard(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-//            Card(
-//                colors = CardDefaults.cardColors(
-//                    containerColor = MaterialTheme.colorScheme.tertiaryContainer
-//                ),
-//                elevation = CardDefaults.cardElevation(4.dp),
-//            ) {
-//                Image(
-//                    painter = rememberDrawablePainter(appIcon),
-//                    contentDescription = "App Icon",
-//                )
-//            }
             Image(
                 painter = rememberDrawablePainter(drawable = packageManager.getApplicationIcon(applicationInfo.packageName)),
                 contentDescription = "App Icon",
@@ -77,6 +66,13 @@ fun AppPreviewCard(
             Text(
                 text = packageManager.getApplicationLabel(applicationInfo).toString(),
                 fontSize = 18.sp,
+                modifier = Modifier
+                    .weight(
+                        weight = 1.0f,
+                        fill = false,
+                    ),
+                softWrap = true,
+                maxLines = 5
             )
             Spacer(modifier = Modifier.width(8.dp))
             Icon(
